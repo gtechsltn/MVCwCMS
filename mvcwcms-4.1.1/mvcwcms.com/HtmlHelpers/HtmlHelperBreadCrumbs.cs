@@ -32,7 +32,7 @@ namespace MVCwCMS.HtmlHelpers
             return htmlHelper.Raw(breadCrumbs);
         }
 
-        private static void BuildBreadCrumbs(CmsPages pages, PagesLanguages pageLanguages, ref string breadCrumbs, int? pageId, string langCode = "en", string separator, bool isPreviousHomePage)
+        private static void BuildBreadCrumbs(CmsPages pages, PagesLanguages pageLanguages, ref string breadCrumbs, int? pageId, string langCode = "en", string separator = "", bool isPreviousHomePage = false)
         {
             CmsPage page = pages.GetPageByPageId(pageId);
             if (page.IsNotNull())
