@@ -29,6 +29,10 @@ Email: nvmanhifi@gmail.com
 Password: Abc@123$
 ```
 
+## Send Mail
+
+EmailHelper .Send() to Send Mail in Controllers\FrontEndSubscriptionRegisterController.cs
+
 ## CKFinder 2
 This is the DEMO version of CKFinder. Please visit the CKFinder web site to obtain a valid license.
 
