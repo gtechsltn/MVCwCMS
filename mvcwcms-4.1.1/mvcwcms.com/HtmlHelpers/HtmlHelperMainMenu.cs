@@ -22,7 +22,7 @@ namespace MVCwCMS.HtmlHelpers
             BuildMainMenu(new CmsPages().GetAllPages(), 1, null, ref mainMenu, string.Empty, className, model.LanguageCode);
             return htmlHelper.Raw(mainMenu);
         }
-        private static void BuildMainMenu(List<CmsPage> backEndCmsPageList, int currentLevel, int? pageParentId, ref string mainMenu, string savedNode, string className, string langCode)
+        private static void BuildMainMenu(List<CmsPage> backEndCmsPageList, int currentLevel, int? pageParentId, ref string mainMenu, string savedNode, string className, string langCode = "en")
         {
             if (backEndCmsPageList != null && currentLevel <= 2)
             {

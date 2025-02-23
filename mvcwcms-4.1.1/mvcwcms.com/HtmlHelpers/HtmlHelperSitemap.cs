@@ -23,7 +23,7 @@ namespace MVCwCMS.HtmlHelpers
             BuildSitemap(new CmsPages().GetAllPages(), backEndCmsPagesLanguages, 1, null, ref sitemap, className, model.LanguageCode);
             return htmlHelper.Raw(sitemap);
         }
-        private static void BuildSitemap(List<CmsPage> backEndCmsPageList, PagesLanguages pagesLanguages, int currentLevel, int? pageParentId, ref string sitemap, string className, string langCode)
+        private static void BuildSitemap(List<CmsPage> backEndCmsPageList, PagesLanguages pagesLanguages, int currentLevel, int? pageParentId, ref string sitemap, string className, string langCode = "en")
         {
             if (backEndCmsPageList != null)
             {

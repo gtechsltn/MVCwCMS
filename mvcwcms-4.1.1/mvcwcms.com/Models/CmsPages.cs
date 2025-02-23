@@ -113,7 +113,7 @@ namespace MVCwCMS.Models
             return result;
         }
 
-        public CmsPageActionlink GetCmsPageActionlink(int? pageId, string langCode)
+        public CmsPageActionlink GetCmsPageActionlink(int? pageId, string langCode = "en")
         {
             CmsPageActionlink result = new CmsPageActionlink();
 
