@@ -32,6 +32,12 @@ Password: Abc@123$
 ## CKFinder 2
 This is the DEMO version of CKFinder. Please visit the CKFinder web site to obtain a valid license.
 
+..\Content\backend\js\mvcwcms-main.js
+
+```
+var finder = new CKFinder();
+```
+
 ### IMPORTANT
 SQL Server has to run in "Mixed Mode" authentication to allow SQL login and not only Windows logins
 
