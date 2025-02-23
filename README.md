@@ -47,6 +47,15 @@ https://www.youtube.com/user/valgen74
 ## MVCwCMS Administration
 https://www.youtube.com/watch?v=NfnE9bwQcyE
 
+# HTML
+
+### Generic placeholder image with (height: 140, width: 140)
+```
+http://placehold.it/140x140
+=>
+https://hurlstonesnorthern.supplies/wp-content/uploads/2018/01/image-placeholder-140x140.jpg
+```
+
 # References
 
 ## MrCMS
