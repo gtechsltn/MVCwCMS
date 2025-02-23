@@ -16,8 +16,12 @@ These are the main features:
 + SEO friendly
 
 ```
-Subfolder: /admin
+URL: /admin/
 Username: administrator
+Password: 12345678
+
+URL: /en/about-us/
+Email: manhng83@gmail.com
 Password: 12345678
 ```
 
