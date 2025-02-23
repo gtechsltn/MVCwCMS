@@ -5,3 +5,4 @@
 /mvcwcms-4.1.1/.vs
 /mvcwcms-4.1.1/mvcwcms.com/bin
 /mvcwcms-4.1.1/mvcwcms.com/obj
+*.log

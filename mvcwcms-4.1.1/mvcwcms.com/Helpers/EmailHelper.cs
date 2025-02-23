@@ -4,11 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Net.Mail;
 using System.Net;
+using log4net;
+using System.Reflection;
 
 namespace MVCwCMS.Helpers
 {
     public class EmailHelper : MailMessage
     {
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private bool _isInitValid = true;
 
         public static string DefaultFrom { get; set; }
@@ -51,11 +55,21 @@ namespace MVCwCMS.Helpers
             {
                 try
                 {
-                    SmtpClient smtpClient = new SmtpClient();
-                    smtpClient.Send(this);
+                    SmtpClient client = new SmtpClient();
+                    client.Host = "smtp.gmail.com";
+                    client.Port = 587;
+                    client.EnableSsl = true;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.UseDefaultCredentials = false;
+                    client.Credentials = new NetworkCredential("dnvn.noreply@gmail.com", "fiuznwnblmnldbya");
+                    client.Timeout = 20000;
+                    client.Send(this);
+                    log.Info("Mail sent!");
                 }
                 catch (Exception ex)
                 {
+                    log.Error(ex.Message, ex);
+
                     Elmah.ErrorSignal.FromCurrentContext().Raise(ex);
 
                     result = false;

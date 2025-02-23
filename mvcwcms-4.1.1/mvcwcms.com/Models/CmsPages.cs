@@ -115,10 +115,13 @@ namespace MVCwCMS.Models
 
         public CmsPageActionlink GetCmsPageActionlink(int? pageId, string langCode = "en")
         {
+            if (string.IsNullOrWhiteSpace(langCode)) { langCode = "en"; }
+
             CmsPageActionlink result = new CmsPageActionlink();
 
             CmsPage page = GetPageByPageId(pageId);
-            if (page.IsNotNull()) {
+            if (page.IsNotNull())
+            {
 
                 if (page.PageTemplateId.IsNull())
                 {
@@ -162,8 +165,8 @@ namespace MVCwCMS.Models
             if (cmsPageList != null)
             {
                 List<CmsPage> pagesObj = (from page in cmsPageList
-                                                 where page.PageParentId == pageParentId
-                                                 select page).ToList();
+                                          where page.PageParentId == pageParentId
+                                          select page).ToList();
 
                 if (pagesObj != null && pagesObj.Count() > 0)
                 {
