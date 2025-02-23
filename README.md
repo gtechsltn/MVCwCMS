@@ -23,6 +23,10 @@ Password: 12345678
 URL: /en/about-us/
 Email: manhng83@gmail.com
 Password: 12345678
+
+URL: /en/home/
+Email: nvmanhifi@gmail.com
+Password: Abc@123$
 ```
 
 ### IMPORTANT
