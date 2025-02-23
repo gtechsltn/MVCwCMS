@@ -32,6 +32,7 @@ Password: Abc@123$
 ## CKFinder 2
 This is the DEMO version of CKFinder. Please visit the CKFinder web site to obtain a valid license.
 
+..\ckfinder\ckfinder.js
 ..\Content\backend\js\mvcwcms-main.js
 
 ```
