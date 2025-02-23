@@ -1,4 +1,5 @@
-﻿using MVCwCMS.App_Start;
+﻿using log4net;
+using MVCwCMS.App_Start;
 using MVCwCMS.Data;
 using MVCwCMS.Helpers;
 using MVCwCMS.Models;
@@ -6,6 +7,7 @@ using System.Configuration;
 using System.Data.Entity;
 using System.Diagnostics;
 using System.Globalization;
+using System.Reflection;
 using System.Threading;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -15,19 +17,16 @@ namespace MVCwCMS
 {
     public class MvcApplication : System.Web.HttpApplication
     {
+        private static readonly ILog log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private CultureInfo previousCultureInfo;
 
         private static bool IsApplicationStart;
 
-        protected void Application_Error()
-        {
-            var ex = Server.GetLastError();
-
-            Debug.WriteLine(ex.ToString());
-        }
-
         protected void Application_Start()
         {
+            log4net.Config.XmlConfigurator.Configure();
+
             //Prevents information leakage from the X-AspNetMvc-Version header of the HTTP response
             MvcHandler.DisableMvcResponseHeader = true;
 
@@ -67,6 +66,14 @@ namespace MVCwCMS
             Bootstrapper.Run();
 
             IsApplicationStart = true;
+        }
+        protected void Application_Error()
+        {
+            var ex = Server.GetLastError();
+
+            Debug.WriteLine(ex.ToString());
+
+            log.Error(ex.Message, ex);
         }
 
         protected void Session_Start()

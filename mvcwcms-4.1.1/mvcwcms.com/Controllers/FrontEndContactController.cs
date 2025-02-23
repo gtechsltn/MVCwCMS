@@ -11,7 +11,8 @@ namespace MVCwCMS.Controllers
         [HttpGet]
         public ActionResult Index(FrontEndCmsPage page)
         {
-            return View();
+            FrontEndContact frontEndContact = new FrontEndContact();
+            return View(frontEndContact);
         }
 
         [HttpPost]
