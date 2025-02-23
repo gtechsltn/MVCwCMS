@@ -15,6 +15,15 @@ These are the main features:
 + Caching support
 + SEO friendly
 
+```
+Subfolder: /admin
+Username: administrator
+Password: 12345678
+```
+
+### IMPORTANT
+SQL Server has to run in "Mixed Mode" authentication to allow SQL login and not only Windows logins
+
 ## MVCwCMS Source
 https://github.com/valgen/mvcwcms
 
